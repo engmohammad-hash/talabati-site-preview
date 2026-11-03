@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<!-- The server serves this page for a missing URL at ANY depth (/a/b/c), so
+     relative links must resolve from the site root, not from that URL. -->
+<base href="/">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الصفحة غير موجودة — طلباتي</title>
+<meta name="description" content="الرابط الذي فتحته غير موجود على موقع طلباتي.">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#F6F5EF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#070D09" media="(prefers-color-scheme: dark)">
+
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/img/logo-192.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+<link rel="preload" href="assets/fonts/Cairo-Black.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Cairo-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/styles.css">
+
+<script>
+(function(){try{var t=localStorage.getItem('talabati-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+
+<style>
+  /* صفحة واحدة قائمة بذاتها، فتنسيقها القليل هنا بدل إثقال ملفّ الأنماط */
+  .nf {
+    min-height: 100svh; display: grid; place-content: center; text-align: center;
+    padding: 2rem var(--gutter); gap: .4rem;
+    background:
+      radial-gradient(120% 80% at 50% -10%, var(--night-3) 0%, transparent 60%),
+      linear-gradient(170deg, var(--night) 0%, var(--night-2) 55%, var(--night-3) 100%);
+    color: var(--on-night);
+  }
+  .nf img { width: 96px; margin-inline: auto; margin-block-end: 1.6rem;
+            filter: drop-shadow(0 14px 34px rgb(235 217 160 / .28)); }
+  .nf .code { font-size: clamp(3.5rem, 2rem + 7vw, 6rem); font-weight: 900; line-height: 1; margin: 0; }
+  .nf h1 { font-size: clamp(1.3rem, 1.1rem + 1vw, 1.8rem); color: var(--on-night); margin: 1rem 0 .4rem; }
+  .nf p  { color: var(--on-night-muted); max-width: 30rem; margin-inline: auto; }
+  .nf .hero-cta { justify-content: center; margin-block-start: 1.8rem; }
+  .nf .alt { margin-block-start: 2.2rem; font-size: .9rem; color: var(--on-night-muted); }
+  .nf .alt a { color: var(--gold-2); text-decoration: underline; text-underline-offset: 3px; }
+</style>
+</head>
+
+<body>
+<main class="nf">
+  <img src="assets/img/logo-256.webp" width="96" height="96" alt="شعار طلباتي">
+  <p class="code gold">٤٠٤</p>
+  <h1>هذه الصفحة غير موجودة</h1>
+  <p>ربّما حُذف الرابط أو كُتب خطأً. لا بأس — كلّ ما تحتاجه في الصفحة الرئيسية.</p>
+
+  <div class="hero-cta">
+    <a class="btn btn-gold" href="index.html">
+      <span class="btn-label">العودة إلى الرئيسية</span>
+    </a>
+    <a class="btn btn-ghost" data-wa href="#" rel="noopener">تواصل معنا عبر واتساب</a>
+  </div>
+
+  <p class="alt" lang="en" dir="ltr">
+    Page not found — <a href="en/index.html">go to the English home page</a>.
+  </p>
+</main>
+
+<script src="config.js"></script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
