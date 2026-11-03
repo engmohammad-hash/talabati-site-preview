@@ -38,6 +38,8 @@
 
 <link rel="preload" href="../assets/fonts/Cairo-Black.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/Cairo-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/img/boot/base.webp" as="image" type="image/webp" fetchpriority="high">
+<link rel="preload" href="../assets/img/boot/rider.webp" as="image" type="image/webp" fetchpriority="high">
 <link rel="stylesheet" href="../assets/css/styles.css">
 
 <script>
@@ -129,8 +131,20 @@
 <!-- Splash screen: disappears as soon as the page has loaded -->
 <div class="boot" id="boot" role="status" aria-label="Opening the site">
   <div class="boot-inner">
-    <span class="boot-logo"><img src="../assets/img/logo-256.webp" width="116" height="116" alt="" fetchpriority="high"></span>
+    <div class="boot-badge" aria-hidden="true">
+      <span class="boot-orbit"></span>
+      <div class="boot-disc">
+        <img class="bl" src="../assets/img/boot/base.webp" width="480" height="495" alt="" fetchpriority="high">
+        <span class="bl-clip">
+          <img class="bl bl-speed" src="../assets/img/boot/speed.webp" width="480" height="495" alt="">
+          <span class="bl-ride"><img class="bl bl-rider" src="../assets/img/boot/rider.webp" width="480" height="495" alt="" fetchpriority="high"></span>
+        </span>
+        <span class="bl-ripple"></span>
+        <img class="bl bl-pin" src="../assets/img/boot/pin.webp" width="480" height="495" alt="">
+      </div>
+    </div>
     <span class="boot-word">TALABATI</span>
+    <span class="boot-tag">Shop with confidence, get it fast</span>
     <span class="boot-line"><i></i></span>
   </div>
 </div>

@@ -523,21 +523,29 @@
       root.classList.remove('is-booting');
       if (!boot) return;
       boot.classList.add('is-gone');
-      setTimeout(function () { if (boot.parentNode) boot.parentNode.removeChild(boot); }, 800);
+      // الدرّاجة تنطلق ثمّ يذوب الحجاب (٠٫٣٤ث + ٠٫٥٥ث في CSS)
+      setTimeout(function () { if (boot.parentNode) boot.parentNode.removeChild(boot); }, 1000);
     }
 
     if (!boot) { finish(); return; }
 
-    var min = REDUCE ? 0 : 900;
+    /* أوّل مرّة في الجلسة يرى الزائر الدرّاجة تمضي قليلًا قبل أن تنطلق؛
+       بعدها، عند التنقّل بين العربية والإنجليزية، تمرّ سريعًا. */
+    var first = true;
+    try {
+      first = !sessionStorage.getItem('talabati-boot');
+      sessionStorage.setItem('talabati-boot', '1');
+    } catch (e) { /* لا شيء */ }
+    var min = REDUCE ? 0 : (first ? 1700 : 700);
     function afterLoad() {
       setTimeout(finish, Math.max(0, min - (Date.now() - t0)));
     }
     if (document.readyState === 'complete') afterLoad();
     else window.addEventListener('load', afterLoad);
     /* شبكة أمان: على شبكة بطيئة قد يتأخّر حدث التحميل كثيرًا، والصفحة خلف
-       الشاشة لا تُمرَّر. بعد ثانيتين ونصف نرفع الغطاء ونترك بقيّة الصور
+       الشاشة لا تُمرَّر. بعد ثلاث ثوانٍ نرفع الغطاء ونترك بقيّة الصور
        تصل وهي مرئيّة. */
-    setTimeout(finish, 2500);
+    setTimeout(finish, 3000);
   })();
 
   /* ========================================================================
